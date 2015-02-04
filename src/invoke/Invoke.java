@@ -1,5 +1,9 @@
 package invoke;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -52,5 +56,15 @@ public class Invoke {
 		}
 		
 		data.close();
+		
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("people.bin")))) {
+			
+			for(Person osoba : people) {
+				oos.writeObject(osoba);
+			}
+			
+		} catch (IOException e) {
+			System.err.println("Couldn't create file");
+		}
 	}
 }
