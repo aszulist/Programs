@@ -21,7 +21,7 @@ public class Person implements Serializable {
 		cnt++;
 	}
 	
-	public Person(int id, String name, String surname, int age,
+	public Person(String name, String surname, int age,
 			EmpCat employment, String phoneNumber) {
 		
 		this();
@@ -132,6 +132,4 @@ public class Person implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 }
