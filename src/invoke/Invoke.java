@@ -59,6 +59,8 @@ public class Invoke {
 		
 		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("people.bin")))) {
 			
+			oos.writeInt(people.size());
+			
 			for(Person osoba : people) {
 				oos.writeObject(osoba);
 			}
@@ -66,5 +68,7 @@ public class Invoke {
 		} catch (IOException e) {
 			System.err.println("Couldn't create file");
 		}
+		
+		ReadPerson.readPeople();
 	}
 }
