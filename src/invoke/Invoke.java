@@ -22,10 +22,10 @@ public class Invoke {
 			guy.setSurname(data.nextLine());
 			
 			System.out.println("Podaj wiek(int):");
-			guy.setAge(data.nextInt());
+			guy.setAge(Integer.parseInt(data.nextLine()));
 			
 			System.out.println("Podaj zatrudnienie (0-2 int):");
-			int empCat = data.nextInt();
+			int empCat = Integer.parseInt(data.nextLine());
 			switch(empCat) {
 			case 0 : {
 				guy.setEmployment(EmpCat.EMPLOYED);
