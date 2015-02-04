@@ -1,5 +1,6 @@
 package invoke;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Invoke {
@@ -9,10 +10,14 @@ public class Invoke {
 		Scanner data = new Scanner(System.in);
 		LinkedList<Person> people = new LinkedList<Person>();
 		
-		
-		System.out.println("Podaj liczbe");
-		
-		Sy
+		for(int i=0; i<3; i++){
+			Person guy = new Person();
+			System.out.println("Podaj imie");
+			people.add(guy);
+			
+			guy.setName(data.nextLine());
+			
+		}
 
 	}
 }
