@@ -22,7 +22,7 @@ public class PersonTableModel extends AbstractTableModel {
 	
 	public boolean isCellEditable(int row, int col) {
 		
-		if(col == 0 || col == 3 || col == 4 || col == 7) {
+		if(col == 0) {
 			return false;
 		} else if (col == 6 && (!((Person)data.get(row)).isPLCitizen())) {
 			return false;
@@ -46,11 +46,20 @@ public class PersonTableModel extends AbstractTableModel {
 		} case 2 : {
 			data.get(row).setOccupation((String)value);
 			return;
+		} case 3 : {
+			data.get(row).setAge((AgeCategoryEnumerated)value);
+			return;
+		} case 4 : {
+			data.get(row).setEmployment((EmploymentCategory)value);
+			return;
 		} case 5 : {
 			data.get(row).setPLCitizen((boolean)value);
 			return;
 		} case 6 : {
 			data.get(row).setDocID((String)value);
+			return;
+		} case 7 : {
+			data.get(row).setGender((GenderCategory)value);
 			return;
 		} case 8 : {
 			data.get(row).setPhoneNumber((String)value);
